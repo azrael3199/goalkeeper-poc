@@ -4,10 +4,9 @@ import styles from "./Hamburger.module.scss";
 
 interface HamburgerProps {
   navLinks: Navigation[];
-  isOpen?: boolean;
 }
 
-const Hamburger = ({ navLinks, isOpen = false }: HamburgerProps) => {
+const Hamburger = ({ navLinks }: HamburgerProps) => {
   return (
     <AnimatePresence>
       <motion.nav
