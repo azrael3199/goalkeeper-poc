@@ -1,6 +1,6 @@
 @use "../../theme/breakpoints.scss" as b;
 
-$navbar-bg: #272f4e;
+$navbar-bg: #2f3341;
 $text-color: #fca1ff;
 
 .navbar-main {
@@ -29,6 +29,7 @@ $text-color: #fca1ff;
         align-items: center;
         height: 100%;
         padding: 8px 12px;
+        padding-right: 4px;
 
         @media screen and (width > b.$layout-breakpoint-small) {
           display: none;
@@ -42,7 +43,7 @@ $text-color: #fca1ff;
       .brand {
         display: flex;
         align-items: center;
-        padding: 12px 16px;
+        padding: 12px 4px;
         padding-left: 0;
 
         @media screen and (width > b.$layout-breakpoint-small) {
@@ -50,7 +51,7 @@ $text-color: #fca1ff;
         }
 
         .brand-logo {
-          width: 7vh;
+          width: 2.5rem;
           aspect-ratio: 1/1;
           margin-right: 4%;
         }
@@ -59,7 +60,7 @@ $text-color: #fca1ff;
           display: none;
           padding: 0 12px;
           padding-left: 0;
-          font-size: 4vh;
+          font-size: 1.5rem;
           color: #fff;
           @media screen and (width > b.$layout-breakpoint-medium) {
             display: block;
@@ -72,7 +73,7 @@ $text-color: #fca1ff;
         flex: auto;
         padding: 8px 12px;
         list-style: none;
-        font-size: 3vh;
+        font-size: 1.15rem;
 
         @media screen and (width > b.$layout-breakpoint-small) {
           display: flex;
@@ -80,6 +81,10 @@ $text-color: #fca1ff;
 
         li a.page-link {
           color: #ddd6ff;
+        }
+
+        li a.page-link:hover {
+          color: #a29fb5;
         }
 
         li a.page-link:link {
@@ -111,8 +116,8 @@ $text-color: #fca1ff;
 
         .login {
           padding: 6px 8px;
-          font-weight: 500;
-          font-size: 3vh;
+          font-weight: 400;
+          font-size: 1.05rem;
           border-radius: 5px;
           background-color: #8f43e6;
           color: #fff;
@@ -126,8 +131,8 @@ $text-color: #fca1ff;
 
         .signup {
           padding: 6px 8px;
-          font-weight: 500;
-          font-size: 3vh;
+          font-weight: 400;
+          font-size: 1.05rem;
           border-radius: 5px;
           background-color: transparent;
           color: #ddd6ff;

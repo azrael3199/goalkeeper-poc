@@ -1,7 +1,7 @@
 @use "../../theme/breakpoints.scss" as b;
 
 .hamburger {
-  background-color: #212121;
+  background-color: #232326;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,6 +17,10 @@
     li a {
       color: #ddd6ff;
       font-size: smaller;
+    }
+
+    li a:hover {
+      color: #a29fb5;
     }
 
     li a:link {

@@ -1,4 +1,3 @@
-import { FaBars } from "react-icons/fa6";
 import { Squash as HamburgerButton } from "hamburger-react";
 import styles from "./Appbar.module.scss";
 import { Navigation } from "../../types/common";
@@ -76,9 +75,7 @@ const Appbar = ({
           )}
         </section>
       </div>
-      {navLinks && hamburgerOpen && (
-        <Hamburger navLinks={navLinks} isOpen={hamburgerOpen} />
-      )}
+      {navLinks && hamburgerOpen && <Hamburger navLinks={navLinks} />}
     </nav>
   );
 };
