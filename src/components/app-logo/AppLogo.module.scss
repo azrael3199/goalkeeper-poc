@@ -2,8 +2,7 @@
 
 .logo-main {
   display: none;
-  background-color: #ffffff;
-  border-radius: 50%;
+  background-color: transparent;
   width: 100%;
   aspect-ratio: 1/1;
   display: flex;
@@ -15,14 +14,14 @@
     aspect-ratio: 1/1;
     background-color: #8c52ff;
     border-radius: 50%;
-    margin-top: 30%;
+    margin-top: 34%;
     margin-right: -14%;
   }
 
   .circle-two {
     width: 35%;
     aspect-ratio: 1/1;
-    background-color: #01a5fe;
+    background-color: #0173fe;
     border-radius: 50%;
     margin-bottom: 40%;
   }
@@ -30,9 +29,9 @@
   .circle-three {
     width: 35%;
     aspect-ratio: 1/1;
-    background-color: #15fe00;
+    background-color: #f76565;
     border-radius: 50%;
-    margin-top: 30%;
+    margin-top: 34%;
     margin-left: -14%;
   }
 }

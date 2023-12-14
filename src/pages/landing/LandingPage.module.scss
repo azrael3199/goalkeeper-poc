@@ -1,0 +1,91 @@
+@use "../../theme/breakpoints.scss" as b;
+
+.header {
+  box-shadow: 0 -2px 10px 0 #ddd6ff;
+  border-radius: 10px;
+  position: sticky;
+  top: 0;
+}
+
+.landing-main {
+  flex: 1;
+
+  .main {
+    display: flex;
+    // overflow-y: scroll;
+    // overflow-x: hidden;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 6% 12%;
+    gap: 4vh;
+
+    .info-card {
+      background-color: transparent; // May change
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 2% 4%;
+      color: #ddd6ff;
+      border: 1.5px solid #615a75;
+      border-radius: 16px;
+      font-weight: 200;
+
+      .info-card__img {
+        min-width: 120px;
+        padding: 1% 2%;
+        margin: auto 0;
+      }
+
+      .info-card__main {
+        padding: 2% 2%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        .info-card__titles-section {
+          padding: 4% 0;
+          text-align: center;
+          line-height: 1.5em;
+
+          .info-card__title {
+            font-size: 1.5em;
+            font-weight: 400;
+          }
+
+          .info-card__subtitle {
+            font-size: 0.8em;
+            font-style: italic;
+            font-weight: 200;
+            color: #ccc;
+          }
+
+          .info-card__content {
+            font-size: 0.8em;
+            font-weight: 300;
+            text-align: justify;
+            text-justify: inter-word;
+          }
+        }
+      }
+
+      @media screen and (width > b.$layout-breakpoint-small) {
+        .info-card__img {
+          min-width: 320px;
+        }
+      }
+    }
+
+    .info-card:hover {
+      box-shadow: 0 0 6px #d448ff;
+    }
+
+    @media screen and (width > b.$layout-breakpoint-small) {
+      .info-card {
+        flex-wrap: nowrap;
+      }
+    }
+  }
+}
