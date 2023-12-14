@@ -1,0 +1,26 @@
+@use "../../theme/breakpoints.scss" as b;
+
+.hamburger {
+  background-color: #212121;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 4px;
+
+  @media screen and (width > b.$layout-breakpoint-small) {
+    display: none;
+  }
+
+  .hamburger-nav-list {
+    list-style: none;
+
+    li a {
+      color: #ddd6ff;
+      font-size: smaller;
+    }
+
+    li a:link {
+      text-decoration: none;
+    }
+  }
+}

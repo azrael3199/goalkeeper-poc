@@ -1,0 +1,38 @@
+@use "../../theme/breakpoints.scss" as b;
+
+.logo-main {
+  display: none;
+  background-color: #ffffff;
+  border-radius: 50%;
+  width: 100%;
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .circle-one {
+    width: 35%;
+    aspect-ratio: 1/1;
+    background-color: #8c52ff;
+    border-radius: 50%;
+    margin-top: 30%;
+    margin-right: -14%;
+  }
+
+  .circle-two {
+    width: 35%;
+    aspect-ratio: 1/1;
+    background-color: #01a5fe;
+    border-radius: 50%;
+    margin-bottom: 40%;
+  }
+
+  .circle-three {
+    width: 35%;
+    aspect-ratio: 1/1;
+    background-color: #15fe00;
+    border-radius: 50%;
+    margin-top: 30%;
+    margin-left: -14%;
+  }
+}
