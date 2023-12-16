@@ -8,6 +8,7 @@ import styles from "./LandingPage.module.scss";
 import targetImg from "../../assets/target.svg";
 import teamGoalsImg from "../../assets/team-goals.svg";
 import progressImg from "../../assets/progress.svg";
+import bgImage from "../../assets/landing-bg.jpg";
 import useScreenSize from "../../hooks/useScreenSize";
 import appConfig from "../../appConfig";
 
@@ -50,21 +51,21 @@ const CONTACT_DETAILS = {
 
 const FOOTER_CONTENT = (
   <React.Fragment>
-    <p className={styles["footer_content"]}>
+    <p className={styles["footer__content"]}>
       For inquiries, support, or partnership opportunities, please reach out to
       our dedicated team.
     </p>
-    <p className={styles["footer_content"]}>
+    <p className={styles["footer__content"]}>
       <strong>Email: </strong>
       <a href={`mailto:${CONTACT_DETAILS.email}`}>{CONTACT_DETAILS.email}</a>
     </p>
-    <p className={styles["footer_content"]}>
+    <p className={styles["footer__content"]}>
       <strong>Address: </strong>
       {CONTACT_DETAILS.address}
     </p>
-    <p className={styles["footer_content"]}>
+    <p className={styles["footer__content"]}>
       Follow us on social media for updates and tips:
-      <div className={styles["footer_socialMedia"]}>
+      <div className={styles["footer__content-socialMedia"]}>
         <a href={CONTACT_DETAILS.facebook}>
           <FaFacebook />
         </a>
@@ -90,6 +91,9 @@ const LandingPage = () => {
         <Appbar navLinks={navLinks} isLoggedIn={isLoggedIn} />
       </header>
       <main className={styles["landing-main"]}>
+        <div className={styles["background"]}>
+          <img src={bgImage} className={styles["background__image"]} />
+        </div>
         <section className={styles["main"]}>
           {
             // TODO: Figure out what can be made reusable?
