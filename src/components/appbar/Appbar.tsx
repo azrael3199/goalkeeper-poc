@@ -33,7 +33,7 @@ const Appbar = ({
     >
       <div className={styles["nav-holder"]}>
         <section className={styles["left-section"]}>
-          {navLinks && (
+          {navLinks && isLoggedIn && (
             <div className={styles["burger-menu"]}>
               <div className={styles["burger-icon"]}>
                 <HamburgerButton
@@ -50,15 +50,17 @@ const Appbar = ({
             </div>
             <p className={styles["app-title"]}>GoalKeeper</p>
           </div>
-          <ul className={styles["links-list"]}>
-            {navLinks?.map((link: Navigation) => (
-              <li key={link.location}>
-                <a href={link.location} className={styles["page-link"]}>
-                  {link.name}
-                </a>
-              </li>
-            ))}
-          </ul>
+          {navLinks && isLoggedIn && (
+            <ul className={styles["links-list"]}>
+              {navLinks?.map((link: Navigation) => (
+                <li key={link.location}>
+                  <a href={link.location} className={styles["page-link"]}>
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )}
         </section>
         <section className={styles["right-section"]}>
           {isLoggedIn ? (
