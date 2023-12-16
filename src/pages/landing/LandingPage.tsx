@@ -1,3 +1,5 @@
+import React from "react";
+import { FaFacebook, FaLinkedin, FaTwitter } from "react-icons/fa6";
 import Appbar from "../../components/appbar/Appbar";
 import { Navigation } from "../../types/common";
 
@@ -6,6 +8,8 @@ import styles from "./LandingPage.module.scss";
 import targetImg from "../../assets/target.svg";
 import teamGoalsImg from "../../assets/team-goals.svg";
 import progressImg from "../../assets/progress.svg";
+import useScreenSize from "../../hooks/useScreenSize";
+import appConfig from "../../appConfig";
 
 const navLinks: Navigation[] = [
   {
@@ -35,8 +39,50 @@ const CONTENT = [
   },
 ];
 
+const CONTACT_DETAILS = {
+  email: "info@goalkeeper.com",
+  phone: "+1 (555) 123-4567",
+  address: "123 Main Street, City, Country, ZIP Code",
+  facebook: "sample@sample.com",
+  linkedin: "sample@sample.com",
+  twitter: "sample@sample.com",
+};
+
+const FOOTER_CONTENT = (
+  <React.Fragment>
+    <p className={styles["footer_content"]}>
+      For inquiries, support, or partnership opportunities, please reach out to
+      our dedicated team.
+    </p>
+    <p className={styles["footer_content"]}>
+      <strong>Email: </strong>
+      <a href={`mailto:${CONTACT_DETAILS.email}`}>{CONTACT_DETAILS.email}</a>
+    </p>
+    <p className={styles["footer_content"]}>
+      <strong>Address: </strong>
+      {CONTACT_DETAILS.address}
+    </p>
+    <p className={styles["footer_content"]}>
+      Follow us on social media for updates and tips:
+      <div className={styles["footer_socialMedia"]}>
+        <a href={CONTACT_DETAILS.facebook}>
+          <FaFacebook />
+        </a>
+        <a href={CONTACT_DETAILS.linkedin}>
+          <FaLinkedin />
+        </a>
+        <a href={CONTACT_DETAILS.twitter}>
+          <FaTwitter />
+        </a>
+      </div>
+    </p>
+  </React.Fragment>
+);
+
 const LandingPage = () => {
   const isLoggedIn = false; // TODO: This will come from context
+
+  const screenSize = useScreenSize();
 
   return (
     <>
@@ -48,13 +94,14 @@ const LandingPage = () => {
           {
             // TODO: Figure out what can be made reusable?
             CONTENT.map((c, idx) => {
-              const firstSection = (
+              let firstSection, secondSection;
+              const imgSection = (
                 <section className={styles["info-card__img"]}>
                   <img src={c.illustration} alt={c.subtitle} />
                 </section>
               );
 
-              const secondSection = (
+              const contentSection = (
                 <section className={styles["info-card__main"]}>
                   <div className={styles["info-card__titles-section"]}>
                     <p className={styles["info-card__title"]}>{c.title}</p>
@@ -66,20 +113,29 @@ const LandingPage = () => {
                 </section>
               );
 
-              console.log(idx);
+              if (
+                screenSize.width <=
+                  appConfig.breakpoints.layoutBreakpointSmall ||
+                idx % 2 === 0
+              ) {
+                firstSection = imgSection;
+                secondSection = contentSection;
+              } else {
+                firstSection = contentSection;
+                secondSection = imgSection;
+              }
 
               return (
                 <article key={c.title} className={styles["info-card"]}>
-                  {idx % 2 === 0 && firstSection}
-                  {idx % 2 === 0 && secondSection}
-                  {idx % 2 === 1 && secondSection}
-                  {idx % 2 === 1 && firstSection}
+                  {firstSection}
+                  {secondSection}
                 </article>
               );
             })
           }
         </section>
       </main>
+      <footer className={styles["landing-footer"]}>{FOOTER_CONTENT}</footer>
     </>
   );
 };
